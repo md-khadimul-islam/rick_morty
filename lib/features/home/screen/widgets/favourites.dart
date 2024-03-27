@@ -29,7 +29,7 @@ class FavouritesScreen extends StatelessWidget {
             FlexibleSpaceBar(background: Utils.showSvgPicture('logo', 'icons')),
       ),
       body: Padding(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.symmetric(horizontal: 24.r),
         child: ListView(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,

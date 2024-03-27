@@ -22,7 +22,7 @@ class EpisodesScreen extends StatelessWidget {
           flexibleSpace: FlexibleSpaceBar(
               background: Utils.showSvgPicture('logo', 'icons'))),
       body: Padding(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.symmetric(horizontal: 24.r),
         child: ListView(
           children: [
             SizedBox(

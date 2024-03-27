@@ -30,7 +30,7 @@ class CartoonDetailsScreen extends StatelessWidget {
                 Utils.showSvgPicture('logo', 'icons', width: double.infinity)),
       ),
       body: ListView(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.symmetric(horizontal: 24.r),
         children: [
           Column(
             children: [

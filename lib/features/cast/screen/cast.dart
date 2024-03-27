@@ -25,11 +25,11 @@ class CastScreen extends StatelessWidget {
             background: Utils.showSvgPicture(
           'logo',
           'icons',
-              // width: double.maxFinite,
+          // width: double.maxFinite,
         )),
       ),
       body: Padding(
-        padding: EdgeInsets.all(24.r),
+        padding: EdgeInsets.symmetric(horizontal: 24.r),
         child: Column(
           children: [
             SizedBox(
@@ -46,7 +46,8 @@ class CastScreen extends StatelessWidget {
                   //     .add(SearchEvent({filterString: "\"" + value + "\""}));
                 },
                 decoration: InputDecoration(
-                  suffixIcon: Icon(Icons.search, size: 22.w, color: Colors.white),
+                  suffixIcon:
+                      Icon(Icons.search, size: 22.w, color: Colors.white),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 16.w, vertical: 5.h),
                   prefixIcon: Container(
@@ -93,6 +94,7 @@ class CastScreen extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 16.h),
             Headers(
                 headerName: 'All Cast',
                 headerColor: AppColors.headerColor,
