@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:rick_and_morty/common_widgets/custom_cart.dart';
 import 'package:rick_and_morty/common_widgets/custom_cartoon_cart.dart';
@@ -21,31 +22,25 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: AppColors.primaryColor,
         appBar: AppBar(
           backgroundColor: AppColors.primaryColor,
-          toolbarHeight: Utils.scrHeight * .1,
+          toolbarHeight: 100.h,
           automaticallyImplyLeading: false,
           flexibleSpace: FlexibleSpaceBar(
               background: Utils.showSvgPicture('logo', 'icons')),
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric(
-              vertical: Utils.scrHeight * .032,
-              horizontal: Utils.scrHeight * .024),
+          padding: EdgeInsets.symmetric(vertical: 32.r, horizontal: 24.r),
           children: <Widget>[
             // Favourite Section
             Headers(
               buttonName: 'View all',
               headerName: 'Favourites',
               onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  Routes.favourite,
-                  (route) => false,
-                );
+                Navigator.pushNamed(context, Routes.favourite);
               },
             ),
-            SizedBox(height: Utils.scrHeight * .016),
+            SizedBox(height: 16.h),
             buildFavouritesItems(context),
-            SizedBox(height: Utils.scrHeight * .052),
+            SizedBox(height: 52.h),
 
             // Meet the cast Section
             Headers(
@@ -56,9 +51,9 @@ class HomeScreen extends StatelessWidget {
               buttonName: 'View all',
               headerName: 'Meet the cast',
             ),
-            SizedBox(height: Utils.scrHeight * .016),
+            SizedBox(height: 16.h),
             buildFavouritesItems(context),
-            SizedBox(height: Utils.scrHeight * .04),
+            SizedBox(height: 40.h),
 
             // Locations Section
             Headers(
@@ -69,9 +64,9 @@ class HomeScreen extends StatelessWidget {
                     .updateSelectedIndex(3);
               },
             ),
-            SizedBox(height: Utils.scrHeight * .016),
+            SizedBox(height: 16.h),
             buildLocationSection(),
-            SizedBox(height: Utils.scrHeight * .04),
+            SizedBox(height: 40.h),
 
             // Episodes Section
             Headers(
@@ -82,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                     .updateSelectedIndex(2);
               },
             ),
-            SizedBox(height: Utils.scrHeight * .016),
+            SizedBox(height: 16.h),
             buildEpisodesSection()
           ],
         ));
@@ -94,15 +89,15 @@ class HomeScreen extends StatelessWidget {
       child: Row(
         children: [
           const CustomCart(title: 'S01 E01', subTitle: 'Pilot'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: 'S01 E02', subTitle: 'Lawnmower Dog'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: 'S01 E03', subTitle: 'Anatomy Park'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: 'S01 E04', subTitle: 'Meeseeks and Destroy'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: 'S01 E05', subTitle: 'Meeseeks and Destroy'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
         ],
       ),
     );
@@ -114,15 +109,15 @@ class HomeScreen extends StatelessWidget {
       child: Row(
         children: [
           const CustomCart(title: '#1', subTitle: 'Earth(c-137)'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: '#1', subTitle: 'Citadel of ricks'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: '#1', subTitle: 'Abadango'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: '#1', subTitle: 'Anatomy Park'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
           const CustomCart(title: '#1', subTitle: 'Anatomy Park'),
-          SizedBox(width: Utils.scrHeight * .024),
+          SizedBox(width: 24.w),
         ],
       ),
     );
@@ -143,7 +138,7 @@ class HomeScreen extends StatelessWidget {
             cartImage: 'rick_sanchez',
             cartName: 'Rick Sanchez',
           ),
-          SizedBox(width: Utils.scrHeight * .014),
+          SizedBox(width: 14.w),
           CustomCartoonCart(
             onTap: () {
               Navigator.pushNamed(context, Routes.details,
@@ -153,7 +148,7 @@ class HomeScreen extends StatelessWidget {
             cartImage: 'morty_smith',
             cartName: 'Morty Smith',
           ),
-          SizedBox(width: Utils.scrHeight * .014),
+          SizedBox(width: 14.w),
           CustomCartoonCart(
             onTap: () {
               Navigator.pushNamed(context, Routes.details,
@@ -163,7 +158,7 @@ class HomeScreen extends StatelessWidget {
             cartImage: 'beth_smith',
             cartName: 'Beth Smith',
           ),
-          SizedBox(width: Utils.scrHeight * .014),
+          SizedBox(width: 14.w),
           CustomCartoonCart(
             onTap: () {
               Navigator.pushNamed(context, Routes.details,
@@ -173,7 +168,7 @@ class HomeScreen extends StatelessWidget {
             cartImage: 'summer_smith',
             cartName: 'Summer Smith',
           ),
-          SizedBox(width: Utils.scrHeight * .014),
+          SizedBox(width: 14.w),
           CustomCartoonCart(
             onTap: () {
               Navigator.pushNamed(context, Routes.details,

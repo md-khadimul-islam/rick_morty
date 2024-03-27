@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:rick_and_morty/features/cast/screen/cast.dart';
 import 'package:rick_and_morty/features/episodes/screen/episodes.dart';
@@ -25,8 +26,8 @@ class BottomNavigation extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.2), // Shadow color
-                  spreadRadius: 0.5, // Spread radius
-                  blurRadius: 1, // Blur radius
+                  spreadRadius: 0.5.r, // Spread radius
+                  blurRadius: 1.r, // Blur radius
                   offset: const Offset(0, -1), // Shadow offset
                 ),
               ],
@@ -43,12 +44,12 @@ class BottomNavigation extends StatelessWidget {
                         ? Utils.showSvgPicture(
                             'home_unselect',
                             'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024,
+                            height: 24.h,
+                            width: 24.w,
                           )
                         : Utils.showSvgPicture('home', 'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024),
+                            height: 24.h,
+                            width: 24.w),
                     label: 'Home',
                   ),
                   BottomNavigationBarItem(
@@ -56,12 +57,12 @@ class BottomNavigation extends StatelessWidget {
                         ? Utils.showSvgPicture(
                             'cast',
                             'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024,
+                            height: 24.h,
+                            width: 24.w,
                           )
                         : Utils.showSvgPicture('cast_unselect', 'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024),
+                            height: 24.h,
+                            width: 24.w),
                     label: 'Cast',
                   ),
                   BottomNavigationBarItem(
@@ -69,12 +70,12 @@ class BottomNavigation extends StatelessWidget {
                         ? Utils.showSvgPicture(
                             'episodes',
                             'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024,
+                            height: 24.h,
+                            width: 24.w,
                           )
                         : Utils.showSvgPicture('episodes_unselect', 'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024),
+                            height: 24.h,
+                            width: 24.w),
                     label: 'Episodes',
                   ),
                   BottomNavigationBarItem(
@@ -82,12 +83,12 @@ class BottomNavigation extends StatelessWidget {
                         ? Utils.showSvgPicture(
                             'locations',
                             'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024,
+                            height: 24.h,
+                            width: 24.w,
                           )
                         : Utils.showSvgPicture('locations_unselect', 'icons',
-                            height: Utils.scrHeight * 0.024,
-                            width: Utils.scrHeight * 0.024),
+                            height: 24.h,
+                            width: 24.w),
                     label: 'Locations',
                   ),
                 ],

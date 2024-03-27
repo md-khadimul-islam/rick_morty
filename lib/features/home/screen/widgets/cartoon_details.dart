@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rick_and_morty/utils/text_style_util.dart';
 
 import '../../../../utils/app_colors.dart';
@@ -20,33 +21,34 @@ class CartoonDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(CupertinoIcons.back, size: 20, color: Colors.white),
+          icon: Icon(CupertinoIcons.back, size: 20.w, color: Colors.white),
         ),
         backgroundColor: AppColors.primaryColor,
-        toolbarHeight: Utils.scrHeight * .1,
+        toolbarHeight: 100.h,
         flexibleSpace: FlexibleSpaceBar(
             background:
                 Utils.showSvgPicture('logo', 'icons', width: double.infinity)),
       ),
       body: ListView(
-        padding: EdgeInsets.all(Utils.scrHeight * .024),
+        padding: EdgeInsets.all(24.r),
         children: [
           Column(
             children: [
               // Cartoon Name Section
               Text(nameImage.name,
-                  style: semiBoldTS(AppColors.headerColor, fontSize: 22)),
-              SizedBox(height: Utils.scrHeight * .02),
+                  style: AppStyle.semiBoldTS(AppColors.headerColor,
+                      fontSize: 22.sp)),
+              SizedBox(height: 20.h),
 
               // Cartoon Image Section
               buildImageSection(),
-              SizedBox(height: Utils.scrHeight * .02),
+              SizedBox(height: 20.h),
 
               // Cartoon Information Section
               buildCartoonInformationSection(),
             ],
           ),
-          SizedBox(height: Utils.scrHeight * .016),
+          SizedBox(height: 16.h),
 
           // Cartoon Origin Section
           const CartonDetails(
@@ -54,7 +56,7 @@ class CartoonDetailsScreen extends StatelessWidget {
               title: 'Origin',
               subTitle: 'Earth (C-137)',
               subIcon: 'route'),
-          SizedBox(height: Utils.scrHeight * .016),
+          SizedBox(height: 16.h),
 
           // Cartoon Location Section
           const CartonDetails(
@@ -71,10 +73,10 @@ class CartoonDetailsScreen extends StatelessWidget {
     return Row(
       children: [
         const CartonDetails(icon: 'status', title: 'Status', subTitle: 'Alive'),
-        SizedBox(width: Utils.scrHeight * .016),
+        SizedBox(width: 16.w),
         const CartonDetails(
             icon: 'species', title: 'Species', subTitle: 'Human'),
-        SizedBox(width: Utils.scrHeight * .016),
+        SizedBox(width: 16.w),
         const CartonDetails(icon: 'gender', title: 'Gender', subTitle: 'Male'),
       ],
     );
@@ -83,13 +85,13 @@ class CartoonDetailsScreen extends StatelessWidget {
   Container buildImageSection() {
     return Container(
       padding: EdgeInsets.all(Utils.scrHeight * .03),
-      height: Utils.scrHeight * .24,
-      width: Utils.scrHeight * .24,
+      height: 240.h,
+      width: 240.w,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Utils.scrHeight * .01),
-          border: Border.all(width: 1.0, color: AppColors.buttonColor)),
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(width: 1.0.w, color: AppColors.buttonColor)),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(Utils.scrHeight * .01),
+        borderRadius: BorderRadius.circular(10.r),
         child: Image.asset('assets/images/${nameImage.image}.png',
             fit: BoxFit.cover),
       ),
@@ -115,26 +117,27 @@ class CartonDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-          horizontal: Utils.scrHeight * .016, vertical: Utils.scrHeight * .008),
-      height: Utils.scrHeight * .128,
-      width: Utils.scrHeight * .13,
+      padding: EdgeInsets.symmetric(horizontal: 16.r, vertical: 8.r),
+      height: 128.h,
+      width: 116.w,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Utils.scrHeight * .01),
-          border: Border.all(color: AppColors.buttonColor, width: 1.0)),
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(color: AppColors.buttonColor, width: 1.0.w)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Utils.showSvgPicture('$icon', 'icons', height: 24, width: 24),
-          SizedBox(height: Utils.scrHeight * .01),
-          Text('$title', style: semiBoldTS(Colors.white, fontSize: 15)),
+          Utils.showSvgPicture('$icon', 'icons', height: 24.h, width: 24.w),
+          SizedBox(height: 10.h),
+          Text('$title',
+              style: AppStyle.semiBoldTS(Colors.white, fontSize: 15.sp)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('$subTitle', style: semiBoldTS(Colors.white, fontSize: 22)),
+              Text('$subTitle',
+                  style: AppStyle.semiBoldTS(Colors.white, fontSize: 22.sp)),
               if (subIcon != null)
                 Utils.showSvgPicture('$subIcon', 'icons',
-                    height: 20, width: 20),
+                    height: 20.h, width: 20.w),
             ],
           ),
         ],
