@@ -25,6 +25,7 @@ class EpisodesScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24.r),
         child: ListView(
           children: [
+            SizedBox(height: 24.h),
             SizedBox(
               height: 48.h,
               child: TextFormField(
@@ -109,7 +110,8 @@ class EpisodesScreen extends StatelessWidget {
                   subTitle: 'Pilot',
                 );
               },
-            )
+            ),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

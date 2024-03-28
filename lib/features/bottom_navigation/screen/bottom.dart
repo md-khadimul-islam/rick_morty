@@ -48,8 +48,7 @@ class BottomNavigation extends StatelessWidget {
                             width: 24.w,
                           )
                         : Utils.showSvgPicture('home', 'icons',
-                            height: 24.h,
-                            width: 24.w),
+                            height: 24.h, width: 24.w),
                     label: 'Home',
                   ),
                   BottomNavigationBarItem(
@@ -61,8 +60,7 @@ class BottomNavigation extends StatelessWidget {
                             width: 24.w,
                           )
                         : Utils.showSvgPicture('cast_unselect', 'icons',
-                            height: 24.h,
-                            width: 24.w),
+                            height: 24.h, width: 24.w),
                     label: 'Cast',
                   ),
                   BottomNavigationBarItem(
@@ -74,8 +72,7 @@ class BottomNavigation extends StatelessWidget {
                             width: 24.w,
                           )
                         : Utils.showSvgPicture('episodes_unselect', 'icons',
-                            height: 24.h,
-                            width: 24.w),
+                            height: 24.h, width: 24.w),
                     label: 'Episodes',
                   ),
                   BottomNavigationBarItem(
@@ -87,8 +84,7 @@ class BottomNavigation extends StatelessWidget {
                             width: 24.w,
                           )
                         : Utils.showSvgPicture('locations_unselect', 'icons',
-                            height: 24.h,
-                            width: 24.w),
+                            height: 24.h, width: 24.w),
                     label: 'Locations',
                   ),
                 ],

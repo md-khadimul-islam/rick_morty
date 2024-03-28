@@ -34,6 +34,7 @@ class FavouritesScreen extends StatelessWidget {
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           children: [
+            SizedBox(height: 24.h),
             SizedBox(
               height: 48.h,
               child: TextFormField(
@@ -123,7 +124,8 @@ class FavouritesScreen extends StatelessWidget {
                   cartImage: 'rick_sanchez',
                 );
               },
-            )
+            ),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

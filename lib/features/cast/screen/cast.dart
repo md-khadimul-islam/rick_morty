@@ -32,6 +32,7 @@ class CastScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24.r),
         child: Column(
           children: [
+            SizedBox(height: 24.h),
             SizedBox(
               height: 48.h,
               child: TextFormField(
@@ -121,7 +122,8 @@ class CastScreen extends StatelessWidget {
                   );
                 },
               ),
-            )
+            ),
+            SizedBox(height: 20.h),
           ],
         ),
       ),
