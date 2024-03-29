@@ -15,25 +15,40 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    rotation();
     return ScreenUtilInit(
       designSize: const Size(430, 932),
       builder: (context, child) => MultiProvider(
         providers: providers,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Entur',
-          theme: ThemeData(
-            appBarTheme: const AppBarTheme(scrolledUnderElevation: 0.0),
-            useMaterial3: true,
+        child: PopScope(
+          canPop: false,
+          onPopInvoked: (didPop) {
+
+          },
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Entur',
+            theme: ThemeData(
+              appBarTheme: const AppBarTheme(scrolledUnderElevation: 0.0),
+              useMaterial3: true,
+            ),
+            initialRoute: Routes.bottom,
+            onGenerateRoute: RouteGenerator.generateRoute,
           ),
-          initialRoute: Routes.bottom,
-          onGenerateRoute: RouteGenerator.generateRoute,
         ),
       ),
     );
+  }
+
+  void rotation() {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ));
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 }
